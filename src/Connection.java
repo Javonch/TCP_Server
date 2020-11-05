@@ -51,7 +51,6 @@ public class Connection extends Thread{
 			int visits = TCP_Server.checkVisits(input, printOut, fileName);
 			
 			if(fileName.equals("/visits.html")){
-				//“Your browser visited various URLs on this site X times”
 				String sentence = "Your browser visited various URLs on this site " + visits + " times";
 				printOut.write("content-length: " + sentence.length());
 				printOut.write("\r\n\r\n");
