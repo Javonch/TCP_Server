@@ -84,7 +84,7 @@ public class Connection extends Thread{
 	 */
 	private static void write(PrintWriter pw, String _file) {
 		try {
-			String file = "web_files/" + _file;
+			String file = "/home/jtc131/TCP_Server/web_files/" + _file;
 			File f = new File(file);
 			BufferedReader br = new BufferedReader(new FileReader(f));
 			String line;
