@@ -70,7 +70,7 @@ public class TCP_Server {
 	// Main method for server to initialize
 	public static void connect() throws IOException, InterruptedException {
 		Properties prop = new Properties();
-		FileInputStream ip = new FileInputStream("web_files/config.properties");
+		FileInputStream ip = new FileInputStream("TCP_Server/web_files/config.properties");
 		prop.load(ip);
 		String port = prop.getProperty("port");
 		try (ServerSocket serverSocket = new ServerSocket(Integer.valueOf(port));) {
