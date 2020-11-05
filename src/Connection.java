@@ -18,7 +18,6 @@ public class Connection extends Thread{
 			PrintWriter printOut = new PrintWriter(out);
 			BufferedReader input = new BufferedReader(new InputStreamReader(in));
 			String reqType = input.readLine().trim();
-			System.out.println("request = " + reqType);
 			// Base case: If nothing in response. Do nothing.
 			if(reqType == null) {
 				printOut.close();
@@ -44,14 +43,12 @@ public class Connection extends Thread{
 						fileName = x;
 				}
 				
-				System.out.println(fileName);
 	
 				/* If we have a file request we actually use, then start writing that
 				 * file to them
 				 */
 				
 				if(fileName.equals("test1.html") || fileName.equals("test2.html")|| fileName.equals("visits.html")) {
-					System.out.println("You have a correct url");
 					printOut.write("HTTP/ 1.1 200 OK \r\n");
 					printOut.write("Content type: text/html \r\n");
 					printOut.write("Keep-Alive: timeout=10 \r\n");
@@ -59,7 +56,6 @@ public class Connection extends Thread{
 					int visits = TCP_Server.checkVisits(input, printOut, fileName);
 			
 					if(fileName.equals("visits.html")){
-						System.out.println("You are in the visit case");
 						String sentence = "Your browser visited various URLs on this site " + visits + " times";
 						printOut.write("content-length: " + sentence.length());
 						printOut.write("\r\n\r\n");

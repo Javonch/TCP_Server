@@ -35,7 +35,7 @@ public class TCP_Server {
 	
 	public static int cookieCheck(BufferedReader requests, String cookieType) throws IOException {
 		String looking = requests.readLine();
-		while(!looking.contains("Cookie") && !looking.isBlank()) {
+		while(!looking.contains("Cookie") && !looking.isEmpty()) {
 			looking = requests.readLine();
 		}
 		if(looking.contains("Cookie")) {
